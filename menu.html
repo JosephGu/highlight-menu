@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: inline-block;">
+        <div class="first-menu" onmouseleave="mouseleaveMenu()" onmouseenter="mouseEnterMenu()">一级目录1</div>
+        <div class="first-menu" onmouseleave="mouseleaveMenu()" onmouseenter="mouseEnterMenu()">一级目录2</div>
+        <div class="first-menu" onmouseleave="mouseleaveMenu()" onmouseenter="mouseEnterMenu()">一级目录3</div>
+    </div>
+    <div style="display: inline-block;">
+        <div>二级目录</div>
+    </div>
+    <script>
+        function mouseleaveMenu() {
+            getFocus(event);
+        }
+
+        function mouseEnterMenu() {
+            getFocus(event);
+        }
+
+        function getFocus(event) {
+            let menus = document.getElementsByClassName('first-menu');
+            for (let i = 0; i < menus.length; i++) {
+                menus[i].style.background = "none";
+                console.log(menus[i].style.background)
+            }
+            event.target.style.background = "red";
+        }
+    </script>
+
+</body>
+
+</html>
